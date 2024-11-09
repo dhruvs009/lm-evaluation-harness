@@ -8,7 +8,7 @@ training_split: train
 validation_split: validation
 test_split: null
 process_docs: !function utils.process_docs
-doc_to_text: "{{query}}"
+doc_to_text: "<|begin_of_text|><|start_header_id|>system<|end_header_id|>Answer the following question.<|eot_id|><|start_header_id|>user<|end_header_id|>{{query}}<|eot_id|><|start_header_id|>assistant<|end_header_id|>"
 doc_to_target: "{{label}}"
 doc_to_choice: "choices"
 metric_list:

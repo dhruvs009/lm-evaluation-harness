@@ -7,7 +7,7 @@ output_type: multiple_choice
 training_split: train
 validation_split: validation
 test_split: test
-doc_to_text: "Question: {{question}}\nAnswer:"
+doc_to_text: "<|begin_of_text|><|start_header_id|>system<|end_header_id|>Answer the following multiple choice question.<|eot_id|><|start_header_id|>user<|end_header_id|>Question: {{question}}<|eot_id|><|start_header_id|>assistant<|end_header_id|>Answer:"
 doc_to_target: "{{choices.label.index(answerKey)}}"
 doc_to_choice: "{{choices.text}}"
 should_decontaminate: true

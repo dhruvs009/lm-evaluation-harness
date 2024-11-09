@@ -1,5 +1,3 @@
-tag:
-  - truthfulqa
 task: truthfulqa_gen
 dataset_path: truthful_qa
 dataset_name: generation
