@@ -16,7 +16,7 @@ def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
         # breakpoint()
         out_doc = {
             "id": doc["id"],
-            "query": f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>Answer the following multiple choice question.<|eot_id|><|start_header_id|>user<|end_header_id|>Question: {preprocess(doc["instruction"])}<|eot_id|><|start_header_id|>assistant<|end_header_id|>Answer:",
+            "query": f'''<|begin_of_text|><|start_header_id|>system<|end_header_id|>Answer the following multiple choice question.<|eot_id|><|start_header_id|>user<|end_header_id|>Question: {preprocess(doc["instruction"])}<|eot_id|><|start_header_id|>assistant<|end_header_id|>Answer:''',
             "choices": [
                 preprocess(option)
                 for option in [

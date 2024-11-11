@@ -22,7 +22,7 @@ def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
     def _process_doc(doc):
         out_doc = {
             "question": preprocess(doc["question"]),
-            "query": QA_PROMPT + f"<|start_header_id|>user<|end_header_id|>Q: {preprocess(doc["question"])}\n<|eot_id|><|start_header_id|>assistant<|end_header_id|>A:",
+            "query": QA_PROMPT + f'''<|start_header_id|>user<|end_header_id|>Q: {preprocess(doc["question"])}\n<|eot_id|><|start_header_id|>assistant<|end_header_id|>A:''',
             "mc1_choices": doc["mc1_targets_choices"],
             "mc2_choices": doc["mc2_targets_choices"],
             "mc2_targets": {"labels": doc["mc2_targets_labels"]},
