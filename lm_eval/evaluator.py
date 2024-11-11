@@ -500,6 +500,7 @@ def evaluate(
         print(lm)
         print(task)
         print(reqtype)
+        print(getattr(lm,reqtype))
         assert "wtf" == "no"
 
         resps = getattr(lm, reqtype)(cloned_reqs)
